@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Roboto',sans-serif;
+    background-color: #323232;
+    color: #fff;
+    padding: 0 120px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+.game-container{
+    height: 100vh;
+    width: 100%;
+}
+.header{
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    padding: 0 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.game{
+    width: 100%;
+    height: calc(100vh - 50px);
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-gap: 20px;
+}
+.game .box{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(215, 215, 24);
+    background-image: url('https://res.cloudinary.com/henryzarza/image/upload/v1601745355/General%20assets/thought_pr1pzv.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 50% 40%;
+    cursor: pointer;
+    transition: all 0.9s ease-in;
+}
+.game .box.rotate{
+    transform: rotateY(360deg);
+}
+.clicked{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Logo_C_sharp.svg/1200px-Logo_C_sharp.svg.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 50% 40%;
+    transition: all 0.3s ease-in;
+}
+.loser{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.loser .lose{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 150px;
+    background-color: #2980b9;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
